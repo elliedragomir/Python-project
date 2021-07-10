@@ -9,7 +9,7 @@
 #The greatest decrease in profits (date and amount) over the entire period
 #Sep-2013 ($-2196167) DONE
 #In addition, your final script should both print the analysis to the terminal 
-# and export a text file with the results.
+# and export a text file with the results. - DONE 
 
 import os
 import csv
@@ -67,6 +67,9 @@ greatest_decrease = min(changes)
 #print(greatest_decrease)
 min_month = changes.index(min(changes)) + 1
 
+#In addition, your final script should both print the analysis to the terminal 
+
+
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {total_months}")
@@ -74,3 +77,21 @@ print(f"Total: ${total_amount}")
 print(f"Average Change: $ {average_change}")
 print(f"Greatest Increase in Profits: {months_count[max_month]} (${(str(greatest_increase))})")
 print(f"Greatest Decrease in Profits: {months_count[min_month]} (${(str(greatest_decrease))})")
+
+
+# ----and export a text file with the results.
+financial_analysis= './Analysis/Financial_Analysis.txt'
+with open(financial_analysis, "w") as file:
+    file.write("Financial Analysis")
+    file.write("\n")
+    file.write("----------------------------")
+    file.write("\n")
+    file.write(f"Total Months: {total_months}")
+    file.write("\n")
+    file.write(f"Total: ${total_amount}")
+    file.write("\n")
+    file.write(f"Average Change: {average_change}")
+    file.write("\n")
+    file.write(f"Greatest Increase in Profits: {months_count[max_month]} (${(str(greatest_increase))})")
+    file.write("\n")
+    file.write(f"Greatest Decrease in Profits: {months_count[min_month]} (${(str(greatest_decrease))})")

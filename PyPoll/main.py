@@ -1,17 +1,5 @@
 #Your task is to create a Python script that analyzes the votes and calculates each of the following:
 
-#The total number of votes cast
-
-#A complete list of candidates who received votes
-
-#The percentage of votes each candidate won
-
-#The total number of votes each candidate won
-
-#The winner of the election based on popular vote.
-
-#In addition, 
-# your final script should both print the analysis to the terminal and export a text file with the results.
 
 import os
 import csv
@@ -53,7 +41,6 @@ with open(pyPool_csv, encoding="utf-8") as csvfile:
 #Print the total number of votes cast
 print(total_votes)
 
-
 # print the total number of votes each candidate won
 print(khan_votes)
 print(correy_votes)
@@ -62,26 +49,56 @@ print(otooley_votes)
 
 # print the percentage of votes each candidate won
 khan_percent = (khan_votes/total_votes) *100
-print(f" Khan: \t \t {khan_percent} % ({khan_votes} votes)")
 correy_percent = (correy_votes/total_votes) * 100
-print(f" Correy: \t {correy_percent} % ({correy_votes} votes)")
 li_percent = (li_votes/total_votes)* 100
-print(f" Li: \t \t {li_percent} % ({li_votes} votes)")
 otooley_percent = (otooley_votes/total_votes) * 100
-print(f" O'Tooley: \t {otooley_percent} % ({otooley_votes} votes)")
 
-
-
-#print the winner of the election based on popular vote.
+#print the winner of the election based on popular votes.
 #make dictionary where the candidate is a key and the number of votes is the attribute, find the max number of votes and print the key using .get
 candidates=["Khan", "Correy", "Li", "O'Tooley"]
 votes=[khan_votes, correy_votes, li_votes, otooley_votes]
 dict_candidates=dict(zip(candidates, votes))
 print(dict_candidates)
 winner=max(dict_candidates, key=dict_candidates.get)
+
+
+#In addition, your final script should both print the analysis to the terminal 
+print(f"Analysis")
+print(f"Election Results")
+print(f"----------------------------")
+print(f"Total Votes: {total_votes}")
+print(f"----------------------------")
+print(f" Khan: \t \t {khan_percent} % ({khan_votes} votes)")
+print(f" Correy: \t {correy_percent} % ({correy_votes} votes)")
+print(f" Li: \t \t {li_percent} % ({li_votes} votes)")
+print(f" O'Tooley: \t {otooley_percent} % ({otooley_votes} votes)")
+print(f"----------------------------")
 print(f"The Winner is {winner}")
+print(f"----------------------------")
 
+# ... and export a text file with the results.
 
-
-
+election_results= './Analysis/Election_Results.txt'
+with open(election_results, "w") as file:
+    file.write(f"Election Results")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"Total Votes: {total_votes}")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f" Khan: \t \t {khan_percent} % ({khan_votes} votes)")
+    file.write("\n")
+    file.write(f" Correy: \t {correy_percent} % ({correy_votes} votes)")
+    file.write("\n")
+    file.write(f" Li: \t \t {li_percent} % ({li_votes} votes)")
+    file.write("\n")
+    file.write(f" O'Tooley: \t {otooley_percent} % ({otooley_votes} votes)")
+    file.write("\n")
+    file.write(f"----------------------------")
+    file.write("\n")
+    file.write(f"The Winner is {winner}")
+    file.write("\n")
+    file.write(f"----------------------------")
 
