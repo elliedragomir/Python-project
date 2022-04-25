@@ -1,10 +1,8 @@
-# python-challenge
-# Steps :
-Created a new repository for this project called python-challenge
+# Python Project
 
-Cloned the new repository
+## Steps :
 
-Inside the local git repository, created a directory for each Python Challenge. Used folder names corresponding to the challenges: PyBank and  PyPoll.
+Inside the local git repository, I created a directory for each Python Challenge. I used folder names corresponding to the challenges: PyBank and  PyPoll.
 
 Inside of each folder I've added the following:
 
@@ -16,4 +14,4 @@ Inside of each folder I've added the following:
 -An "analysis" folder that contains my text file that has the results from my analysis.
 
 
-Pushed the above changes to GitLab.
+
